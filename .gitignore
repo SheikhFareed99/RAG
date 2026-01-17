@@ -1,0 +1,11 @@
+
+data/
+data/**
+
+vector_db/
+vector_db/**
+
+vector db/
+vector db/**
+
+.env
