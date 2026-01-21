@@ -1,11 +1,11 @@
 from pathlib import Path
 from langchain_community.document_loaders import (
     PyPDFLoader,
-    JSONLoader,
     TextLoader,
     Docx2txtLoader,
-    UnstructuredExcelLoader
+
 )
+
 
 class load_data:
     def __init__(self, data_path: str):
@@ -17,18 +17,18 @@ class load_data:
 
         loaders = [
             ("**/*.pdf", PyPDFLoader),
-            ("**/*.json", JSONLoader),
             ("**/*.txt", TextLoader),
-            ("**/*.docx", Docx2txtLoader),
-            ("**/*.xlsx", UnstructuredExcelLoader),
+            ("**/*.docx", Docx2txtLoader)
         ]
 
         for pattern, LoaderClass in loaders:
             files = list(base_path.glob(pattern))
-            print(f"{pattern} files found: {len(files)} -> {[f.name for f in files]}")
+            print(
+                f"{pattern} files found: {len(files)} -> {[f.name for f in files]}")
 
             for file in files:
                 loader = LoaderClass(str(file))
                 documents.extend(loader.load())
+
 
         return documents

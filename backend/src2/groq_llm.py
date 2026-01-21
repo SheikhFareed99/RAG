@@ -1,16 +1,14 @@
+
 from groq import Groq
 import time
 
 class LLM:
     def __init__(self, api_key, model="openai/gpt-oss-20b"):
-
         self.client = Groq(api_key=api_key)
         self.model = model
 
     def ask_llm(self, system_prompt, user_prompt, retries=5):
-        """
-        Ask LLM with system and user prompt, retrying up to `retries` times on failure.
-        """
+    
         last_error = ""
         for attempt in range(1, retries + 1):
             try:

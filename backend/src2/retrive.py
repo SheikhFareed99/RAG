@@ -60,7 +60,7 @@ class Retrieve:
     def retrieve_with_rerank(self, query, top_k):
       
         query_embedding = self.embedding.do_embadding([query])[0]
-        retrieval_k = top_k * 3   
+        retrieval_k = top_k * 2  
         result = self.vector_store.collection.query(
             query_embeddings=[query_embedding],
             n_results=retrieval_k
