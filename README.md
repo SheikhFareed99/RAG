@@ -1,6 +1,6 @@
 # 📚 RAG (Retrieval-Augmented Generation) Project
 
-This project is a **Retrieval-Augmented Generation (RAG) system** built using **FastAPI**, **ChromaDB**, and an **LLM (via Groq API)**. It allows users to upload documents, generate embeddings, store them in a vector database, and query those documents using natural language.
+This project is a **Retrieval-Augmented Generation (RAG) system** built using **FastAPI**, **ChromaDB**,**Langchain**,**hugging face ** and an **LLM (via Groq API)**. It allows users to upload documents, generate embeddings, store them in a vector database, and query those documents using natural language.
 
 The system is designed to answer questions **only from the provided documents**, making it suitable for private knowledge bases, academic material, or internal documentation systems.
 
